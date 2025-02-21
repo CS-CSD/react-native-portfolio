@@ -4,8 +4,8 @@ import { FlatList, View, Text, Image, StyleSheet, TouchableOpacity, SafeAreaView
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
-  const lightBackground = require('./assets/whitemarble.jpg');  // Light mode background
-  const darkBackground = require('./assets/blackmarble.jpg');  // Dark mode background
+  const lightBackground = require('./assets/whitemarble.jpg');  
+  const darkBackground = require('./assets/blackmarble.jpg'); 
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -25,18 +25,18 @@ export default function App() {
         <FlatList
           data={projects}
           keyExtractor={(item) => item.id}
-          contentContainerStyle={{ paddingTop: 50 }} // Adds space at the top
+          contentContainerStyle={{ paddingTop: 50 }}
           ListHeaderComponent={
             <>
               <View style={[styles.contain, darkMode && styles.darkContain]}>
-                {/* Profile Picture as Theme Toggle Button */}
+                {}
                 <TouchableOpacity onPress={toggleDarkMode}>
                   <Image source={require("./assets/picture_ko.jpg")} style={styles.picture} />
                 </TouchableOpacity>
                 <Text style={[styles.name, darkMode && styles.darkText]}>Carlo Dela Roca</Text>
                 <Text style={[styles.bio, darkMode && styles.darkText]}>3rd year BSCS</Text>
                 <Text style={[styles.bio, darkMode && styles.darkText]}>Dereshishishishishi</Text>
-                <Text style={[styles.bio, darkMode && styles.darkText]}>Press profile to change theme</Text>
+                <Text style={[styles.bio, darkMode && styles.darkText]}>Tap image for light/dark mode</Text>
               </View>
 
               <View style={[styles.contain, darkMode && styles.darkContain]}>
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.8)", // White with 80% opacity
+    backgroundColor: "rgba(255, 255, 255, 0.8)", 
     borderRadius: 15,
     shadowColor: "#000",
     shadowOpacity: 0.2,
